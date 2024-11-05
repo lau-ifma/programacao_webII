@@ -18,7 +18,7 @@ const Dividir = (a, b) =>{
 function clicouSoma(){
     let v1 = document.getElementById("v1").value;
     let v2 = document.getElementById("v2").value;
-
+j
     let s = adicao(v1, v2)
 
     document.getElementById("resultado").value = s
@@ -41,3 +41,4 @@ function clicouDiv(){
     let s = Dividir(v1, v2)
     document.getElementById("resultado").value = s
 }
+
