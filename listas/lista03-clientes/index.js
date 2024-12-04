@@ -13,10 +13,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')))
 
 
-
-
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname+'/contents/index.html')
+    res.sendFile(__dirname+'/src/index.html')
 })
 
 app.get('/listar', (req, res)=>{
