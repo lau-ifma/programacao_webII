@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename)
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')))
+app.use('/icons', express.static(path.join(__dirname, './node_modules/bootstrap-icons/font')))
 
 
 app.get('/', (req, res)=>{
@@ -18,14 +19,14 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/listar', (req, res)=>{
-    res.sendFile(__dirname+'/contents/listar.html')
+    res.sendFile(__dirname+'/src/listar.html')
 })
 
 app.get('/cadastrar', (req, res)=>{
-    res.sendFile(__dirname+'/contents/cadastrar.html')
+    res.sendFile(__dirname+'/src/cadastrar.html')
 })
 app.get('/usuarios', (req, res)=>{
-    res.sendFile(__dirname+'/contents/usuarios.html')
+    res.sendFile(__dirname+'/src/usuarios.html')
 })
 
 
