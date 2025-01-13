@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes 2</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
+     <link rel="stylesheet" href="/css/global.css">
+     <link rel="stylesheet" href="/icons/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <nav  class="navbar bg-success">
+      <div class="container rounded p-2 ">
+        <a class="navbar-brand text-white" href="/"> <strong>IFMA Construções</strong></a>
+
+            <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle"></i> Usuario
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-person-vcard-fill"></i> Meus Dados</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> Alterar Senha</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sair</a></li>
+                </ul>
+            </div>
+
+      </div>
+    </nav>
+
+    <div class="row m-0" >
+      <div class="col-md-3 bg-body-secondary p-4">
+        <img src="/img/profile.png" class="w-50 d-block mx-auto rounded">
+        <h4 class="text-center mt-3">Maria Clara</h4>
+        <h5 class="text-center">Administrador</h5>
+    </div>
+
+      <div class="col-sm-9 p-4">
+        <div class="bg-body-secondary d-flex justify-content-around py-2">
+          <h4 >Bem vindo ao Sistema</h4>
+          <div class="nav-item">   
+            <a  href="/listar" type="button" class="btn btn-outline-primary"><i class="bi bi-card-list"></i> Produtos</a>   
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  <script src="/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
