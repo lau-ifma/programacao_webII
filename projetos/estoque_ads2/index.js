@@ -21,6 +21,8 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
+
+
 /**ROTAS DO SISTEMA */
 app.get('/', function(req, res){
     res.render('admin/index')
