@@ -1,15 +1,14 @@
-import Sequelize  from "sequelize";
-
+import Sequelize from "sequelize";
 /* conexao com banco */
-const NOME_BANCO ='loja'
+const NOME_BANCO = 'loja'
 const USUARIO = 'root'
 const SENHA = ''
 const HOST = ''
 
 const sequelize = new Sequelize(
-    NOME_BANCO, 
+    NOME_BANCO,
     USUARIO,
-    SENHA, 
+    SENHA,
     {
         host: HOST,
         dialect: 'mysql'
@@ -17,12 +16,12 @@ const sequelize = new Sequelize(
 )
 
 sequelize.authenticate()
-.then(()=>{
-    console.log('Conexao estabelecida com sucesso!\n')
-})
-.catch((error) =>{
-    console.log("ERRO: ", error)
-})
+    .then(() => {
+        console.log('Conexao estabelecida com sucesso!\n')
+    })
+    .catch((error) => {
+        console.log("ERRO: ", error)
+    })
 
 
-export default {sequelize, Sequelize}
+export default { sequelize, Sequelize }

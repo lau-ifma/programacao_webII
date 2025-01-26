@@ -2,17 +2,17 @@ import banco from "../config/banco.js";
 
 /* criando tabelas no banco */
 const Produto = banco.sequelize.define('produtos', {
-    id:{
+    id: {
         type: banco.Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    descricao:{
-        type:banco.Sequelize.STRING(150)
+    descricao: {
+        type: banco.Sequelize.STRING(150)
     },
 
-    preco:{
+    preco: {
         type: banco.Sequelize.FLOAT
     },
 
@@ -24,12 +24,12 @@ const Produto = banco.sequelize.define('produtos', {
         type: banco.Sequelize.INTEGER
     },
 
-    foto:{
+    foto: {
         type: banco.Sequelize.STRING(250)
     }
-    
+
 })
 
-/*sincronizar com o banco */
-Produto.sync() 
+/*sincronizar com o banco, necessario apenas uma ves*/
+//Produto.sync()
 export default Produto

@@ -5,6 +5,6 @@ import ProdutoController from '../controllers/ProdutoController'
 
 router.get('/', ProdutoController.index)
 router.get('/cadastro', ProdutoController.cadastrar)
-router.post('/cadastro', ProdutoController.salvar)
- 
+router.post('/salvar', ProdutoController.salvar)
+
 export default router
