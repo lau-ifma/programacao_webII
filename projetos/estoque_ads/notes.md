@@ -1,0 +1,7 @@
+
+### projeto concluido:
+https://github.com/brunnovicente/estoquesimples/tree/main
+
+
+### importante
+- rodar pelomenos 1x separadamente o arquivo /models/sync.js, para criar a tabela!
