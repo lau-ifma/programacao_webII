@@ -30,6 +30,5 @@ const Produto = banco.sequelize.define('produtos', {
 
 })
 
-/*sincronizar com o banco, necessario apenas uma ves*/
 // Produto.sync()
 export default Produto

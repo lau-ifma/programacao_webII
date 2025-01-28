@@ -1,5 +1,5 @@
 
-import Produto from '../models/Produto.js'
+import Produto from '../models/produto.js'
 
 class ProdutoController {
     index = async function (req, res) {
