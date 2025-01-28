@@ -5,10 +5,10 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="btn btn-sm btn-primary mx-2" href="/pessoa/cadastro"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a class="btn btn-sm btn-primary mx-2" href="/pessoa/cadastrar"><i class="fa-solid fa-plus"></i> Novo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-sm btn-secondary" href="/admin" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                    <a class="btn btn-sm btn-secondary" href="/" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
                 <td>{{telefone}}</td>
                 <td>{{email}}</td>
                 <td>
-                    <button class="btn btn-sm btn-outline-danger" onclick="excluirProduto({{id}})"><i class="fa-solid fa-trash-can"></i> Exluir</button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="excluirProduto('{{id}}')"><i class="fa-solid fa-trash-can"></i> Exluir</button>
                     <a class="btn btn-sm btn-outline-primary" href="/produto/editar/{{id}}"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                 </td>
             </tr>
@@ -39,3 +39,24 @@
     </table>
 
 </div>
+
+<script>
+  async function excluirProduto(id) {
+    console.log('ID recebido:', id); // Debug
+    const confirmacao = confirm(`Tem certeza que deseja excluir esta pessoa? ${id}`);
+    if (!confirmacao) return;
+
+    try {
+      const response = await fetch(`/pessoa/delete/${id}`, { method: 'DELETE' });
+      if (response.ok) {
+        alert('Pessoa excluída com sucesso!');
+        location.reload(); // Atualiza a página para refletir a exclusão.
+      } else {
+        const error = await response.json();
+        location.reload();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+</script>

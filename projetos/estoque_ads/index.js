@@ -1,5 +1,5 @@
 import express from 'express'
-const app = express() 
+const app = express()
 import path from 'path'
 import { fileURLToPath } from 'url'
 import handlebars from 'express-handlebars'
@@ -18,13 +18,14 @@ app.engine('handlebars', handlebars.engine({
 }))
 app.set('view engine', 'handlebars')
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
 
+
 /**ROTAS DO SISTEMA */
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.render('admin/index')
 })
 
@@ -35,4 +36,7 @@ app.use('/produto', produto)
 import pessoa from './routes/pessoa.js'
 app.use('/pessoa', pessoa)
 
-app.listen(3200, ()=> console.log('Servidor truando em http://localhost:3200'))
+/**FIM ROTAS DO SISTEMA */
+
+
+app.listen(3200, () => console.log('Servidor truando em http://localhost:3200'))
