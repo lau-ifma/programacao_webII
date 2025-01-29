@@ -36,6 +36,12 @@ app.use('/produto', produto)
 import pessoa from './routes/pessoa.js'
 app.use('/pessoa', pessoa)
 
+import venda from './routes/venda.js'
+app.use('/venda', venda)
+
+import usuario from './routes/usuario.js'
+app.use('/usuario', usuario)
+
 /**FIM ROTAS DO SISTEMA */
 
 

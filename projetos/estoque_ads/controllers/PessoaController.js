@@ -28,7 +28,7 @@ class PessoaController {
     deletar = async (req, res) => {
 
         const { id } = req.params
-        console.log("id=========================================== ", id)
+        console.log("id ====== ", id)
         await Pessoa.destroy({
             where: {
                 id: id

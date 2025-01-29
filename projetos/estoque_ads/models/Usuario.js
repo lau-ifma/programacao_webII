@@ -2,7 +2,7 @@ import banco from "../config/banco.js";
 import Pessoa from "./Pessoa.js";
 
 const Usuario = banco.sequelize.define('usuarios', {
-    id:{
+    id: {
         type: banco.Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -16,9 +16,9 @@ const Usuario = banco.sequelize.define('usuarios', {
     categoria: {
         type: banco.Sequelize.INTEGER
     },
-    status:{
+    status: {
         type: banco.Sequelize.INTEGER
-    }  
+    }
 
 })
 
