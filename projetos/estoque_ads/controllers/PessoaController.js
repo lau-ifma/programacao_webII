@@ -1,5 +1,7 @@
 
+import { where } from "sequelize"
 import Pessoa from "../models/Pessoa.js"
+import Usuario from "../models/Usuario.js"
 
 class PessoaController {
     index = async (req, res) => {
@@ -25,6 +27,22 @@ class PessoaController {
         })
     }
 
+    // novo
+    perfil = async (req, res) =>{
+        let id = req.params.id
+        let pessoa = await Pessoa.findByPk(id) /* busca pela primary key */
+        let usuarios =  await Usuario.findAll({
+            where:{
+                pessoa_id: id
+            }
+        })
+        res.render('pessoa/perfil', {
+            pessoa: pessoa,
+            usuarios: usuarios
+        })
+    }
+    // novo
+    
     deletar = async (req, res) => {
 
         const { id } = req.params

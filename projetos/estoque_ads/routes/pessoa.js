@@ -6,6 +6,7 @@ import PessoaController from '../controllers/PessoaController.js'
 
 router.get('/', PessoaController.index)
 router.get('/cadastrar', PessoaController.cadastrar)
+router.get('/perfil', PessoaController.perfil)
 router.post('/salvar', PessoaController.salvar)
 router.delete('/delete/:id', PessoaController.deletar)
 
