@@ -17,7 +17,7 @@ const sequelize = new Sequelize(
 
 sequelize.authenticate()
     .then(() => {
-        console.log('Conexao estabelecida com sucesso!\n')
+        console.log('\n- - - - Conexao estabelecida com sucesso! - - - - \n')
     })
     .catch((error) => {
         console.log("ERRO: ", error)

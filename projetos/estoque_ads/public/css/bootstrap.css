@@ -4,6 +4,13 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+
+ .text-hover:hover {
+  opacity: 0.8; /* Diminui a opacidade para 70% */
+  transition: opacity 0.2s ease-in-out; /* Adiciona uma transição suave */
+}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;

@@ -11,6 +11,11 @@ class UsuarioController {
         const pessoas = await Pessoa.findAll()
         res.render('usuario/cadastro', {pessoas: pessoas})
     }
+    
+    login = async (req, res) =>{
+        // const pessoas = await Pessoa.findAll()
+        res.render('usuario/login')
+    }
 
     salvar = (req, res) => {
         const { username, senha, categoria, pessoa_id  } = req.body;
