@@ -1,0 +1,5 @@
+.text-hover:hover {
+    opacity: 0.8; /* Diminui a opacidade para 70% */
+    transition: opacity 0.2s ease-in-out; /* Adiciona uma transição suave */
+  }
+  
