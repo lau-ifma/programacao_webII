@@ -2,6 +2,7 @@
 import { where } from "sequelize"
 import Pessoa from "../models/Pessoa.js"
 import Usuario from "../models/Usuario.js"
+import bcrypt from  'bcryptjs'
 
 class PessoaController {
     index = async (req, res) => {
@@ -13,7 +14,7 @@ class PessoaController {
         res.render('pessoa/cadastro')
     }
 
-    salvar = (req, res) => {
+    salvar = async (req, res) => {
         const { nome, cpf, telefone, email } = req.body;
         const pessoa = {
             nome: nome,
@@ -22,6 +23,9 @@ class PessoaController {
             email: email,
             status: 1
         }
+
+        //const buscaPessoa =  await Pessoa.findOne(pessoa)
+
         Pessoa.create(pessoa).then(() => {
             res.redirect('/pessoa')
         })

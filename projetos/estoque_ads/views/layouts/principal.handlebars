@@ -33,6 +33,12 @@
         </div>
     </nav>
 
+    {{#if success_msg}}
+
+        <h1>{{success_msg}}</h1>
+
+    {{/if}}
+
     {{{body}}}
     
     <script src="/js/bootstrap.bundle.js"></script>

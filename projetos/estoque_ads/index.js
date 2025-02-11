@@ -1,11 +1,14 @@
 import express from 'express'
-const app = express()
 import path from 'path'
 import { fileURLToPath } from 'url'
 import handlebars from 'express-handlebars'
 import Handlebars from 'handlebars'
 import bodyParser from 'body-parser'
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access'
+import session from 'express-session'
+import flash from 'connect-flash'
+
+const app = express()
 
 /*CONFIGURAÇÃO DA PASTA ESTATICA*/
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -21,8 +24,22 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+/* SESSÃO */
+app.use(session, ({
+    secret: '123456',
+    resave: true,
+    saveUninitialized: true
+}))
+app.use(flash())
 
+/* middlewares - executados quando a rota for chamada */
+app.use((req, res, next)=> {
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    next()
+})
 
+/* FIM SESSÃO */
 
 /**ROTAS DO SISTEMA */
 app.get('/', function (req, res) {
@@ -41,7 +58,6 @@ app.use('/venda', venda)
 
 import usuario from './routes/usuario.js'
 app.use('/usuario', usuario)
-
 /**FIM ROTAS DO SISTEMA */
 
 
